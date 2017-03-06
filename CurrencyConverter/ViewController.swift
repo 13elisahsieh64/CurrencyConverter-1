@@ -15,10 +15,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     let yenRate = 113.94
     let euroRate = 0.89
     
-    
     var dollarAmount = 0.0
     
-
     @IBAction func clearData(_ sender: UIButton) {
         inputTextField.text = ""
         poundLabel.text = "0.00"
