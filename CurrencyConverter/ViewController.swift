@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
+    let decimalSeparator = ","
     
     // conversion constants
     let poundRate = 0.69
@@ -17,6 +18,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     var dollarAmount = 0.0
     
+    // outlets
+    @IBOutlet weak var inputTextField: UITextField!
+    @IBOutlet weak var poundLabel: UILabel!
+    @IBOutlet weak var yenLabel: UILabel!
+    @IBOutlet weak var euroLabel: UILabel!
+
+    // called when user clicks "Clear" button
     @IBAction func clearData(_ sender: UIButton) {
         inputTextField.text = ""
         poundLabel.text = "0.00"
@@ -24,24 +32,39 @@ class ViewController: UIViewController, UITextFieldDelegate {
         euroLabel.text = "0.00"
     }
     
+    // called when input dollar amount field changes values
+    @IBAction func dollarAmountChanged(_ sender: UITextField) {
+        let originalText = inputTextField.text!
+        let lastCharacter = originalText.characters.last
+        let inputText = originalText.replacingOccurrences(of: decimalSeparator, with: "")
+        if let amount = Double(inputText) {
+            dollarAmount = amount
+            inputTextField.text = formatInputDisplayString(dollarAmount)
+            if let lastCharUnwrapped = lastCharacter, lastCharUnwrapped == "." {
+                inputTextField.text = "\(inputTextField.text!)."  // add the trailing decimal point back
+            }
+        }
+        
+        updateUI()
+    }
     
+    // called when user clicks "Convert" button
     @IBAction func convertCurrency(_ sender: UIButton) {
         updateUI()
     }
     
-    @IBOutlet weak var inputTextField: UITextField!
-    @IBOutlet weak var poundLabel: UILabel!
-    @IBOutlet weak var yenLabel: UILabel!
-    @IBOutlet weak var euroLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
         inputTextField.delegate = self
+        inputTextField.becomeFirstResponder()
+        
     }
 
     func updateUI() {
-        if let amount = Double(inputTextField.text!) {
+        let inputText = inputTextField.text!.replacingOccurrences(of: decimalSeparator, with: "")
+        if let amount = Double(inputText) {
             dollarAmount = amount
         }
         
@@ -51,13 +74,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
         dollarAmount = 0.0
     }
     
+    private func formatInputDisplayString(_ doubleValue: Double) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.minimumIntegerDigits = 1
+        numberFormatter.minimumFractionDigits = 0
+        numberFormatter.maximumFractionDigits = 20
+        numberFormatter.currencyDecimalSeparator = decimalSeparator
+        return numberFormatter.string(from: NSNumber(floatLiteral: doubleValue))!
+    }
+    
     private func formatDisplayString(_ doubleValue: Double) -> String {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         numberFormatter.minimumIntegerDigits = 1
         numberFormatter.minimumFractionDigits = 2
         numberFormatter.maximumFractionDigits = 2
-        numberFormatter.currencyDecimalSeparator = ","
+        numberFormatter.currencyDecimalSeparator = decimalSeparator
         return numberFormatter.string(from: NSNumber(floatLiteral: doubleValue))!
     }
     
@@ -76,8 +109,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
         updateUI()
     }
-    
-
 
 }
 
