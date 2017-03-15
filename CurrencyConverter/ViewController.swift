@@ -45,11 +45,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
             dollarAmount = amount
         }
         
-        poundLabel.text = "\(dollarAmount * poundRate)"
-        yenLabel.text = "\(dollarAmount * yenRate)"
-        euroLabel.text = "\(dollarAmount * euroRate)"
+        poundLabel.text = formatDisplayString(dollarAmount * poundRate)
+        yenLabel.text = formatDisplayString(dollarAmount * yenRate)
+        euroLabel.text = formatDisplayString(dollarAmount * euroRate)
         dollarAmount = 0.0
     }
+    
+    private func formatDisplayString(_ doubleValue: Double) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.minimumIntegerDigits = 1
+        numberFormatter.minimumFractionDigits = 2
+        numberFormatter.maximumFractionDigits = 2
+        numberFormatter.currencyDecimalSeparator = ","
+        return numberFormatter.string(from: NSNumber(floatLiteral: doubleValue))!
+    }
+    
     
     // MARK: UITextFieldDelegate methods
     
@@ -65,6 +76,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
         updateUI()
     }
+    
 
 
 }

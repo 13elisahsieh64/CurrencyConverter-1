@@ -13,6 +13,7 @@
 		7E8D47671E6DE3CA00CC1A2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E8D47661E6DE3CA00CC1A2C /* Assets.xcassets */; };
 		7E8D476A1E6DE3CA00CC1A2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E8D47681E6DE3CA00CC1A2C /* LaunchScreen.storyboard */; };
 		7E8D47721E6DE7A000CC1A2C /* pound-yen-euro-dollar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E8D47711E6DE7A000CC1A2C /* pound-yen-euro-dollar.png */; };
+		7E8FFD961E78769000FFB1F3 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8FFD951E78769000FFB1F3 /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		7E8D47691E6DE3CA00CC1A2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E8D476B1E6DE3CA00CC1A2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E8D47711E6DE7A000CC1A2C /* pound-yen-euro-dollar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pound-yen-euro-dollar.png"; sourceTree = "<group>"; };
+		7E8FFD951E78769000FFB1F3 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		7E8D475E1E6DE3CA00CC1A2C /* CurrencyConverter */ = {
 			isa = PBXGroup;
 			children = (
+				7E8FFD951E78769000FFB1F3 /* RoundedButton.swift */,
 				7E8D475F1E6DE3CA00CC1A2C /* AppDelegate.swift */,
 				7E8D47611E6DE3CA00CC1A2C /* ViewController.swift */,
 				7E8D47631E6DE3CA00CC1A2C /* Main.storyboard */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E8D47621E6DE3CA00CC1A2C /* ViewController.swift in Sources */,
+				7E8FFD961E78769000FFB1F3 /* RoundedButton.swift in Sources */,
 				7E8D47601E6DE3CA00CC1A2C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +310,7 @@
 				7E8D47701E6DE3CA00CC1A2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
