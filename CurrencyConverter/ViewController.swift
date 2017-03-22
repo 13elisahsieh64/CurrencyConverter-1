@@ -74,24 +74,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
         dollarAmount = 0.0
     }
     
-    private func formatInputDisplayString(_ doubleValue: Double) -> String {
+    private func formatDecimalString(_ doubleValue: Double,
+                                     minimumFractionDigits: Int,
+                                     maximumFractionDigits: Int ) -> String {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         numberFormatter.minimumIntegerDigits = 1
-        numberFormatter.minimumFractionDigits = 0
-        numberFormatter.maximumFractionDigits = 20
+        numberFormatter.minimumFractionDigits = minimumFractionDigits
+        numberFormatter.maximumFractionDigits = maximumFractionDigits
         numberFormatter.currencyDecimalSeparator = decimalSeparator
         return numberFormatter.string(from: NSNumber(floatLiteral: doubleValue))!
     }
     
+    private func formatInputDisplayString(_ doubleValue: Double) -> String {
+        return formatDecimalString(doubleValue, minimumFractionDigits: 0, maximumFractionDigits: 20)
+    }
+    
     private func formatDisplayString(_ doubleValue: Double) -> String {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        numberFormatter.minimumIntegerDigits = 1
-        numberFormatter.minimumFractionDigits = 2
-        numberFormatter.maximumFractionDigits = 2
-        numberFormatter.currencyDecimalSeparator = decimalSeparator
-        return numberFormatter.string(from: NSNumber(floatLiteral: doubleValue))!
+        return formatDecimalString(doubleValue, minimumFractionDigits: 2, maximumFractionDigits: 2)
     }
     
     

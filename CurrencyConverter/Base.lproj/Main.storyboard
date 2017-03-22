@@ -26,16 +26,16 @@
                                 <rect key="frame" x="16" y="20" width="343" height="157"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8s5-f8-flD">
-                                <rect key="frame" x="16" y="185" width="342" height="30"/>
+                                <rect key="frame" x="16" y="185" width="343" height="30"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45E-tT-RbL">
-                                        <rect key="frame" x="0.0" y="0.0" width="197" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="197.5" height="30"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="currency-dollar-icon" translatesAutoresizingMaskIntoConstraints="NO" id="PDV-x0-dtt">
                                                 <rect key="frame" x="0.0" y="0.0" width="24" height="30"/>
                                             </imageView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dollar Amount" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="NYI-fe-Dxq">
-                                                <rect key="frame" x="24" y="0.0" width="173" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dollar Amount" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="9" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="NYI-fe-Dxq">
+                                                <rect key="frame" x="24" y="0.0" width="173.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
@@ -46,7 +46,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VwI-e2-fnV" customClass="RoundedButton" customModule="CurrencyConverter" customModuleProvider="target">
-                                        <rect key="frame" x="202" y="0.0" width="79" height="30"/>
+                                        <rect key="frame" x="202.5" y="0.0" width="79" height="30"/>
                                         <state key="normal" title="Convert">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -66,7 +66,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4f-Xh-SdL" customClass="RoundedButton" customModule="CurrencyConverter" customModuleProvider="target">
-                                        <rect key="frame" x="286" y="0.0" width="56" height="30"/>
+                                        <rect key="frame" x="286.5" y="0.0" width="56.5" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="Clear">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -179,7 +179,7 @@
                             <constraint firstItem="Z79-yx-dA8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="A83-E1-hUR"/>
                             <constraint firstItem="8s5-f8-flD" firstAttribute="top" secondItem="Z79-yx-dA8" secondAttribute="bottom" constant="8" symbolic="YES" id="GGh-qk-vVb"/>
                             <constraint firstItem="Z79-yx-dA8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="H7c-x7-RqF"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="8s5-f8-flD" secondAttribute="trailing" constant="1" id="IFA-U2-g28"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8s5-f8-flD" secondAttribute="trailing" id="IFA-U2-g28"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z79-yx-dA8" secondAttribute="trailing" id="SLo-do-W7f"/>
                             <constraint firstItem="dS4-cx-LKS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="e8e-vS-lg2"/>
                             <constraint firstItem="8s5-f8-flD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fJ2-Bi-30c"/>
